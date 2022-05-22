@@ -1,0 +1,28 @@
+.picrow{
+    width: 100%;
+    height: 200px;
+    display: block;
+    float: left;
+    margin-bottom: 100px;
+    overflow-y: auto;
+}
+
+.picrow img{
+    margin-left: 13px;
+    cursor: pointer;
+}
+
+.picrow img:hover{
+    border: 3px solid #542344;
+    border-radius: 15px;
+}
+
+.textrow{
+    width: 100%;
+    height: 200px;
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding-left: 20px;
+    padding-right: 20px;
+}

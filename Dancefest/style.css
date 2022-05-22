@@ -1,0 +1,319 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ----------------------------------------------- */
+
+*{
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body{
+    background-color: #d8bfaa;
+    display: block;
+    position: absolute;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    color: #EBF5EE;
+    font-family: 'sans-sherif';
+}
+
+.positioner{
+    max-width: 1366px;
+    height: 100%;
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header{
+    width: 100%;
+    height: 400px;
+    display: block;
+    background-image:linear-gradient(to bottom,#542344,#953c78);
+    border-radius: 15px;
+    float: left;
+}
+
+.titlediv{
+    font-family: 'Lobster', 'Comic Sans';
+    font-size: 5em;
+    text-align: center;
+    color: #EBF5EE;
+    position: relative;
+    display: block;
+    margin-top: 30px;
+    letter-spacing: 10px;
+    animation: FadeIn 3s;
+}
+
+.quotediv{
+    font-family: 'Lobster Two', "Bradley Hand";
+    font-size: 3em;
+    text-align: center;
+    color: #EBF5EE;
+    position: relative;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    animation: FadeIn 3s;
+}
+
+.picdiv img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+    left: -10px;
+    animation: FadeIn 3s;
+}
+
+nav{
+    width: 100%;
+    height: 50px;
+    float: left;
+    background-color: #cb9f82;
+    display: block;
+    border-radius: 15px;
+    font-size: 2em;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+  border-radius: 15px;
+  font-size: 1em;
+  margin-left: 17%;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  text-align: center;
+  color: #EBF5EE;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  border: 2px solid #D8BFAA;
+  border-radius: 15px;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #cb9f82;
+  min-width: 160px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #EBF5EE;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: rgba(200,200,200,0.1);}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+section{
+    background-color: #dfd8c9;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 15px;
+    float: left;
+    padding-top: 50px;
+    overflow: auto;
+}
+
+footer{
+    width: 100%;
+    height: 100px;
+    display: block;
+    background-image:linear-gradient(to bottom,#542344,#953c78);
+    border-radius: 15px;
+    float: left;
+}
+
+.row{
+    width: 100%;
+    height: 200px;
+    background-color: #D8BFAA60;
+    float: left;
+    position: relative;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.row .picture{
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+
+.row .textdiv{
+    width: 80%;
+    height: 100%;
+    float: left;
+    font-size: 1.5em;
+    padding: 20px 20px;
+}
+
+.row h2{
+    font-size: 1.5em;
+    color: #542344;
+}
+
+.row .picture img{
+    margin-left: auto;
+    margin-top: auto;
+    margin-right: auto;
+    width: 60%;
+    display: block;
+    border-radius: 20px;
+    margin-top: 25px;
+}
+
+footer div{
+    width: 33.3%;
+    height: 100%;
+    display: block;
+    float: left;
+}
+
+.leftpart{
+    font-size: 1.2em;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+.midpart img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.rightpart{
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 30px;
+    font-size: 1.1em;
+}
+
+.row:nth-child(odd){border-left: 3px solid #542344}
+.row:nth-child(even){border-right: 3px solid #542344}
+
+.row:nth-child(even) .picture{float: right}
+.row:nth-child(even) .textdiv h2{text-align: right}
+.row:nth-child(even) .textdiv{float: right}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #d8bfaa;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #542344;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #953c78;
+}
+
+@keyframes FadeIn{
+    0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@media only screen and (max-width: 1100px)
+{   
+    li{
+        margin-left: 3%;
+    }
+}
+
+@media only screen and (max-width: 570px)
+{   
+    li{
+        margin-left: 0;
+    }
+}

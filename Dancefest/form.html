@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>DanceFest</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="form.css">
+        <link rel="icon" href="logo.PNG">
+        <!-- Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Lobster Two' rel='stylesheet'>
+
+    </head>
+    
+    <body>
+        <div class="positioner">
+
+        <header>
+
+            <div class="titlediv">
+                <h1>Dancefest</h1>
+            </div>
+
+            <div class="quotediv">
+                <p>,,Where every step matters"</p>
+            </div>
+
+            <div class="picdiv">
+                <img src="logo.PNG" width="500px" height="200px">
+            </div>
+            
+        </header>
+
+        <nav>
+
+            <ul>
+                <li><a href="index.html">Főoldal</a></li>
+                <li><a href="form.html">Előjegyzés</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Műfajok</a>
+                    <div class="dropdown-content">
+                        <a href="break.html">Break</a>
+                        <a href="salsa.html">Salsa</a>
+                        <a href="hiphop.html">Hiphop</a>
+                        <a href="step.html">Step</a>
+                        <a href="keringo.html">Keringo</a>
+                    </div>
+                </li>
+            </ul>
+
+        </nav>
+
+        <section>
+            <h1>Foglalj dátumot táncorára nálunk! és mi majd értesitünk az időpontról!</h1>
+            <br>
+
+            <div class="form">
+                <fieldset>
+                <legend>Foglalás:</legend>
+                <label for="name">Név</label><br>
+                <input type="text" id="name" name="name" placeholder="Név"><br>
+                <label for="datum">Dátum</label><br>
+                <input type="date" id="datum" name="datum"><br>
+                <label for="email">E-mail</label><br>
+                <input type="email" id="email" name="email" placeholder="email"><br><br>
+                <button onclick="datahandle()">Foglalás</button>
+              </fieldset>
+            </div>
+            
+            <div class="table">
+                <div class="trow">
+                    <p>Megrendelő</p>
+                    <p>Dátum</p>
+                    <p>E-mail</p>
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <div class="leftpart">
+                <p>Készitette: &copy; Ozsváth Alexandra</p>
+                <p>Osztály: XII.A</p>
+                <p>Dátum: 2021</p>
+            </div>
+            <div class="midpart">
+                <img src="logo.PNG" width="200px" height="100px">
+            </div>
+            <div class="rightpart">
+                <p>Horváth János Elméleti Liceum</p>
+                <p>&copy;Minden jog fentartva</p>
+            </div>
+        </footer>
+
+        </div>
+
+        <script>
+            
+            function datahandle()
+            {
+                var name;
+                var datum;
+                var email;
+                
+                name = document.getElementById("name").value;
+                datum = document.getElementById("datum").value;
+                email = document.getElementById("email").value;
+                
+                if(!name || !datum || !email)
+                    {
+                        window.alert("Hiányos információ! Kérlek nézd át!");
+                        return;
+                    }
+                
+                var divnode = document.createElement("div");
+                divnode.className= "trow";
+
+                var textnode1 = document.createElement("p");
+                var textnode2 = document.createElement("p");
+                var textnode3 = document.createElement("p");
+
+                var text = document.createTextNode(name);
+                textnode1.appendChild(text);
+                text = document.createTextNode(datum);
+                textnode2.appendChild(text);
+                text = document.createTextNode(email);
+                textnode3.appendChild(text);
+                
+                divnode.appendChild(textnode1);
+                divnode.appendChild(textnode2);
+                divnode.appendChild(textnode3);
+                
+                document.getElementsByClassName("table")[0].appendChild(divnode);
+            }
+
+        </script>
+    </body>
+</html>

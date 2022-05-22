@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameVers</title>
+    <link rel="stylesheet" type="text/css" href="design.css">
+    
+    <script>
+        
+    function shownav()
+    {
+    
+    x = document.getElementsByTagName("nav")[0].style;
+    
+    if(x.display == "none")
+
+        {x.display = "block"}
+    else
+        {x.display = "none"}
+    }
+
+</script>
+    
+</head>
+
+<body>
+    <div class="positioner">
+        <header>
+            <div class="logopos">
+                <img class="logo1" src="pics/logofinal.png" width="100px" height="100px">
+            </div>
+            <div onclick="shownav()" class="logonav">
+            <h1>Gamevers</h1>
+            </div>
+            <div class="logopos">
+                <img class="logo2" src="pics/logofinal.png" width="100px" height="100px">
+            </div>
+        </header>
+        
+        <nav style="display: none;">
+            <ul>
+                <li><a href="index.html">Főoldal</a></li>
+                <li><a href="info.html">Infó</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Katalógus</a>
+                    <div class="dropdown-content">
+                        <a href="catalogpc.html">PC</a>
+                        <a href="catalogps.html">Playstation</a>
+                        <a href="catalogxbox.html">Xbox</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        
+        <section>
+            <div class="bestsellsec">
+                <div class="textcont">
+                    <h1>Bestsell</h1>
+                </div>
+                <div class="gamecont">
+                    <div class="buycont">
+                        <img src="covers/PC/cod1.jpg" width="200px" height="300px">
+                        <h3>Call of Duty Infinite Warfare</h3>
+                        <p>Kiadó: Activision</p>
+                        <p>Ár: 50&euro;</p>
+                    </div>
+                    <div class="buycont">
+                        <img src="covers/PS/bf5.jpg" width="200px" height="300px">
+                        <h3>Battlefield V</h3>
+                        <p>Kiadó: Dice</p>
+                        <p>Ár: 30&euro;</p>
+                    </div> 
+                    <div class="buycont">
+                        <img src="covers/PC/crysis.jpg" width="200px" height="300px">
+                        <h3>Crysis</h3>
+                        <p>Kiadó: Electronic Arts</p>
+                        <p>Ár: 40&euro;</p>
+                    </div>
+                    <div class="buycont">
+                        <img src="covers/Xbox/fifa.png" width="200px" height="300px">
+                        <h3>Fifa-2021</h3>
+                        <p>Kiadó: Electronic Arts</p>
+                        <p>Ár: 60&euro;</p>
+                    </div> 
+                </div>
+            </div>
+            
+            <div class="textdiv">
+                <h1>A Gamevers a világ összes tájáról összegyüjti a legnépszerübb legújabb játékokat és a legjobb áron kinálja fel őket, ha további játékokra lennél kiváncsi vagy vásárolni szeretnél, nyisd meg a menüt és kattints a <span style="color: white">katalógusra</span></h1>
+            </div>
+            
+        </section>
+
+        <footer>
+            <p>Gamevers 2021</p>
+            <p>Costa Erik XII.A</p>
+            <p>&copy;Minden jog fenttartva</p>
+        </footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameVers</title>
+    <link rel="stylesheet" type="text/css" href="design.css">
+    <link rel="stylesheet" type="text/css" href="catalog.css">
+    <link rel="stylesheet" type="text/css" href="kosar.css">
+    
+<script>
+        
+    function shownav()
+    {
+    
+    x = document.getElementsByTagName("nav")[0].style;
+    
+    if(x.display == "none")
+
+        {x.display = "block"}
+    else
+        {x.display = "none"}
+    }
+    
+    function buyfunc(elem)
+    {
+        var names = [];
+        var prices = [];
+        var i = 0;
+        var j;
+        var node;
+        var textnode;
+        var textnode2;
+        var node1,node2;
+        var total;
+        
+        if(!localStorage.getItem("counter") === null)
+        {
+            names = JSON.parse(localStorage.getItem("names"));
+            prices =JSON.parse(localStorage.getItem("prices"));
+            i =JSON.parse(localStorage.getItem("counter"));
+            total = prices =JSON.parse(localStorage.getItem("total"));
+        }
+        
+        var name = elem.childNodes[3].innerHTML;
+        var x = elem.childNodes[7];
+        var price = x.childNodes[1].innerHTML;
+        
+        names[i] = name;
+        prices[i] = price;
+        
+        i = i+1;
+        
+        localStorage.setItem("names", JSON.stringify(names));
+        localStorage.setItem("prices", JSON.stringify(prices));
+        localStorage.setItem("counter", JSON.stringify(i));
+        localStorage.setItem("total", JSON.stringify(total));
+        
+        alert("Tétel hozzáadva a listához");
+        
+    for(j=0;j<i;j++)
+            {
+                node = document.createElement("div");
+                node.classList.add("row");
+                node1 = document.createElement("div");
+                node2 = document.createElement("div");
+                node1.classList.add("name");
+                node2.classList.add("price");
+                
+                textnode = document.createElement("p");
+                textnode2 = document.createTextNode(names[j]);
+                textnode.appendChild(textnode2);
+                node1.appendChild(textnode);
+                textnode = document.createElement("p");
+                textnode2 = document.createTextNode(prices[j]);
+                textnode.appendChild(textnode2);
+                node2.appendChild(textnode);
+                
+                node.appendChild(node1);
+                node.appendChild(node2);
+                
+                document.getElementsByClassName("grouper")[0].appendChild(node);
+                
+            }
+        total = document.getElementById("total").innerHTML;
+        total = parseInt(total);
+        price = parseInt(price);
+        total = total + price;
+        document.getElementById("total").innerHTML = total;
+    }
+        
+    function delkosar()
+        {
+            localStorage.removeItem("names");
+            localStorage.removeItem("prices");
+            localStorage.removeItem("counter");
+            alert("Kosár törölve!");
+            location.reload();
+        }
+        
+</script>
+    
+</head>
+
+<body>
+    <div class="positioner">
+        <header>
+            <div class="logopos">
+                <img class="logo1" src="pics/logofinal.png" width="100px" height="100px">
+            </div>
+            <div onclick="shownav()" class="logonav">
+            <h1>Gamevers</h1>
+            </div>
+            <div class="logopos">
+                <img class="logo2" src="pics/logofinal.png" width="100px" height="100px">
+            </div>
+        </header>
+        
+        <nav style="display: none;">
+            <ul>
+                <li><a href="index.html">Főoldal</a></li>
+                <li><a href="info.html">Infó</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Katalógus</a>
+                    <div class="dropdown-content">
+                        <a href="catalogpc.html">PC</a>
+                        <a href="catalogps.html">Playstation</a>
+                        <a href="catalogxbox.html">Xbox</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        
+        <section>
+            <div class="contentdiv">
+                <div class="gamecont">
+                    <div class="buycont" onclick="buyfunc(this);">
+                        <img src="covers/PC/cod1.jpg" width="200px" height="300px">
+                        <h3>Call of Duty Infinite Warfare</h3>
+                        <p>Kiadó: Activision</p>
+                        <p>Ár: <span>50</span>&euro;</p>
+                        <p style="color:red">BESTSELLER</p>
+                    </div>
+                    <div class="buycont" onclick="buyfunc(this);">
+                        <img src="covers/PC/red_dead_redemption_-_cover.jpg" width="200px" height="300px">
+                        <h3>Red Dead Redemption</h3>
+                        <p>Kiadó: Electronic Arts</p>
+                        <p>Ár: <span>50</span>&euro;</p>
+                    </div> 
+                    <div class="buycont" onclick="buyfunc(this);">
+                        <img src="covers/PC/crysis.jpg" width="200px" height="300px">
+                        <h3>Crysis</h3>
+                        <p>Kiadó: Electronic Arts</p>
+                        <p>Ár: <span>40</span>&euro;</p>
+                        <p style="color:red">BESTSELLER</p>
+                    </div>
+                    <div class="buycont" onclick="buyfunc(this);">
+                        <img src="covers/PC/gta.png" width="200px" height="300px">
+                        <h3>Grand Theft Auto</h3>
+                        <p>Kiadó: Rockstar Games</p>
+                        <p>Ár: <span>60</span>&euro;</p>
+                    </div>
+                    <div class="buycont" onclick="buyfunc(this);">
+                        <img src="covers/PC/cod2.jpg" width="200px" height="300px">
+                        <h3>Call of Duty Modern Warfare</h3>
+                        <p>Kiadó: Activision</p>
+                        <p>Ár: <span>40</span>&euro;</p>
+                    </div>
+                    <div class="buycont" onclick="buyfunc(this);">
+                        <img src="covers/PC/Fallout-3.jpg" width="200px" height="300px">
+                        <h3>Fallout 3</h3>
+                        <p>Kiadó: Bethesda</p>
+                        <p>Ár: <span>30</span>&euro;</p>
+                    </div> 
+                    <div class="buycont" onclick="buyfunc(this);">
+                        <img src="covers/PC/farcry.jpg" width="200px" height="300px">
+                        <h3>Farcry Primal</h3>
+                        <p>Kiadó: Ubisoft</p>
+                        <p>Ár: <span>35</span>&euro;</p>
+                    </div>
+                    <div class="buycont" onclick="buyfunc(this);">
+                        <img src="covers/PC/Far-Cry-5.jpg" width="200px" height="300px">
+                        <h3>Far Cry 5</h3>
+                        <p>Kiadó: Electronic Arts</p>
+                        <p>Ár: <span>60</span>&euro;</p>
+                    </div> 
+                    <div class="buycont" onclick="buyfunc(this);">
+                        <img src="covers/PC/justcause.jpg" width="200px" height="300px">
+                        <h3>Just Cause 2</h3>
+                        <p>Kiadó: Rockstar Games</p>
+                        <p>Ár: <span>40</span>&euro;</p>
+                    </div>
+                    <div class="buycont" onclick="buyfunc(this);">
+                        <img src="covers/PC/nfs.jpg" width="200px" height="300px">
+                        <h3>Need For Speed 2015</h3>
+                        <p>Kiadó: Electronic Arts</p>
+                        <p>Ár: <span>30</span>&euro;</p>
+                    </div> 
+                    <div class="buycont" onclick="buyfunc(this);">
+                        <img src="covers/PC/nfs2.jpg" width="200px" height="300px">
+                        <h3>Need For Speed Payback</h3>
+                        <p>Kiadó: Electronic Arts</p>
+                        <p>Ár: <span>50</span>&euro;</p>
+                    </div>
+                    <div class="buycont" onclick="buyfunc(this);">
+                        <img src="covers/PC/nfs3.png" width="200px" height="300px">
+                        <h3>Need For Speed Heat</h3>
+                        <p>Kiadó: Electronic Arts</p>
+                        <p>Ár: <span>60</span>&euro;</p>
+                    </div> 
+                    <div class="buycont" onclick="buyfunc(this);">
+                        <img src="covers/PC/reddead.jpg" width="200px" height="300px">
+                        <h3>Watch Dogs</h3>
+                        <p>Kiadó: Ubisoft</p>
+                        <p>Ár: <span>50</span>&euro;</p>
+                    </div>
+                    <div class="buycont" onclick="buyfunc(this);">
+                        <img src="covers/PC/tomb.jpg" width="200px" height="300px">
+                        <h3>Tomb Raider</h3>
+                        <p>Kiadó: Crystal Dynamics</p>
+                        <p>Ár: <span>30</span>&euro;</p>
+                    </div> 
+                    <div class="buycont" onclick="buyfunc(this);">
+                        <img src="covers/PC/valhala.jpg" width="200px" height="300px">
+                        <h3>Assassin's Creed Vallhala</h3>
+                        <p>Kiadó: Ubisoft</p>
+                        <p>Ár: <span>60</span>&euro;</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grouper">
+            <div class="row">
+                <div class="name"><p style="color:white">Név</p></div>
+                <div class="price"><p style="color:white">Ár</p></div>
+            </div>
+            </div>
+            <div class="row">
+                <p style="text-align:right;padding-top: 10px;padding-right:10px;">Összesen: <span id="total">0</span> Euró</p>
+            </div>
+            <button onclick="alert('Sikeres Megrendelés!');location.reload();">Megrendelés</button>
+            <button onclick="delkosar()">Törlés</button>
+            
+        </section>
+
+        <footer>
+            <p>Gamevers 2021</p>
+            <p>Costa Erik XII.A</p>
+            <p>&copy;Minden jog fenttartva</p>
+        </footer>
+    </div>
+
+</body>
+</html>
